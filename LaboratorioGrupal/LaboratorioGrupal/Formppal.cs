@@ -18,7 +18,7 @@ namespace LaboratorioGrupal
 
         private void btnform2_Click(object sender, EventArgs e)
         {
-            new Form2().Show();
+            new Form3().Show();
         }
 
         private void btnformMDI_Click(object sender, EventArgs e)

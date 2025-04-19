@@ -1,0 +1,234 @@
+TP2: conceptos teóricos sobre la programación visual
+
+Parte 1
+1. ¿Qué característica posee la programación visual?
+	Es un estilo de programación que permite crear programas a través de la manipulacion de elementos gráficos.
+
+2. ¿Qué es un control de usuario?
+	Es un componente reutilizable de la interfaz gráfica de usuario (GUI) que agrupa funcionalidades y una representación visual.
+
+3. ¿Cuáles son los tres elementos constitutivos que un control de usuario debe poseer?
+	Todo control de usuario debe poseer una interfaz gráfica, un comportamiento asociado y un mecanismo de comunicación.
+
+4. ¿Para qué se utiliza la ventana denominada Solution Explorer?
+	Se utiliza para visualizar y gestionar la estructura de la solución, sus proyectos y archivos.
+
+5. ¿Para qué se utiliza la ventana denominada Properties?
+	Se utiliza para visualizar y modificar los atributos o propiedades del objeto seleccionado en ese momento en el diseñador.
+
+6. ¿Para qué se utiliza la ventana denominada Toolbox?
+	Contiene una lista de componentes y controles reutilizables que se pueden arrastrar y soltar sobre el diseño para construir la interfaz de usuario.
+
+7. ¿Qué es y que puede contener una Solución en el entorno de trabajo visto en clase?
+	Una solución es un contenedor lógico que organiza uno o más proyectos. Contiene los proyectos relacionados junto con sus archivos de diseño, clases, configuración y recursos.
+
+8. ¿Qué es y que puede contener un Proyecto en el entorno de trabajo visto en clase?
+	Un proyecto es una unidad de compilación ue produce un ejecutable(exe) o una biblioteca(dll)
+
+9. ¿Qué es un formulario?
+	Un formulario en winforms es un contenedor para controles de usuarios, similar a una ventana de aplicación.
+
+10. Describa al menos 10 propiedades, 10 métodos y 10 eventos del control Button.
+	Propiedades:
+		Name, Text, Size, Padding, Location, Font, BackColor, Visble, TabIndex, TabStop
+	Métodos:
+		Show, Hide, Focus, Update, Dispose, BringToFront, SendToBack, SuspendLayout, ResumeLayout, PerformClick
+	Eventos:
+		Click, DoubleClick, MouseDown, MouseUp, MouseEnter, MouseLeave, MouseMove, KeyDown, KeyUp, KeyPress
+
+11. Describa al menos 10 propiedades, 10 métodos y 10 eventos del control CheckBox.
+	Propiedades:
+		Name, Text, Checked, CheckState, Enabled, Visible, Location, Size, BackColor, ForeColor
+	Métodos:
+		PerformClick, Focus, Show, Hide, BringToFront, SendToBack, Invalidate, Update, Dispose, Capture
+	Eventos:
+		CheckedChanged, CheckStateChanged, Click, MouseDown, MouseUp, MouseEnter, MouseLeave, MouseMove, GotFocus, LostFocus
+
+12. Describa al menos 10 propiedades, 10 métodos y 10 eventos del control Combobox.
+	Propiedades:
+		Items, SelectedItem, SelectedIndex, Text, DropDownStyle, Sorted, MaxDropDownItems, Enabled, Visible, Location
+	Métodos:
+		Items.Add, Items.Insert, Items.Remove, Items.RemoveAt, Items.Clear, Focus, Show, Hide, BringToFront, SendToBack
+	Eventos:
+		SelectedIndexChanged, TextUpdate, DropDown, DropDownClosed, Click, MouseDown, MouseUp, MouseEnter, MouseLeave, MouseMove
+
+13. Describa al menos 10 propiedades, 10 métodos y 10 eventos del control DateTimePicker.
+	Propiedades:
+		Value, Format, CustomFormat, ShowUpDown, ShowCheckBox, Checked, MinDate, MaxDate, Enabled, Visible
+	Métodos:
+		Focus, Show, Hide, BringToFront, SendToBack, Invalidate, Update, ResetText, Dispose, Capture
+	Eventos:
+		ValueChanged, CloseUp, DropDown, CheckedChanged, Click, MouseDown, MouseUp, MouseEnter, MouseLeave, MouseMove
+
+14. Describa al menos 10 propiedades, 10 métodos y 10 eventos del control Timer.
+	Propiedades:
+		Interval, Enabled, AutoReset, Site, DesignMode, Container, CanRaiseEvents, Events, Name, Tag
+	Métodos:
+		Start, Stop, Dispose, GetService, ToString
+	Eventos:
+		Tick, Disposed
+
+15. Seleccione 10 controles adicionales y de cada uno de ellos describa 5 métodos, 5 propiedades
+y 5 eventos.
+	Label:
+		Propiedades: Text, AutoSize, BackColor, ForeColor, Font
+		Métodos: Focus, Show, Hide, BringToFront, Invalidate
+		Eventos: Click, DoubleClick, MouseEnter, MouseLeave, MouseMove
+	TextBox:
+		Propiedades: Text, Multiline, ReadOnly, PasswordChar, MaxLenght
+		Métodos: Clear, SelectAll, Focus, Copy, Paste
+		Eventos: TextChanged, KeyPress, KeyDown, KeyUp, GotFocus
+	ListBox
+		Propiedades: Items, SelectedItem, SelectedIndex, SelectionMode, Sorted
+		Métodos: Focus, Items.Add, Items.Remove, Items.RemoveAt, Items.Clear
+		Eventos: SelectedIndexChanged, DoubleClick, MouseDown, MouseUp, MouseMove
+	PictureBox
+		Propiedades: Image, SizeMode, BorderStyle, BackColor, ImageLocation
+		Métodos: Load, LoadAsync, Save, Focus, Invalidate
+		Eventos: Click, DoubleClick, MouseDown, MouseUp, MouseMove
+	Panel
+		Propiedades: BackColor, BorderStyle, AutoScroll, Controls, Dock
+		Métodos: SuspendLayout, ResumeLayout, Focus, Invalidate, PerformLayout
+		Eventos: Click, DoubleClick, ControlAdded, ControlRemoved, Paint
+	GroupBox
+		Propiedades: Text, BackColor, ForeColor, Controls, AutoSize
+		Métodos: SuspendLayout, SuspendLayout, Focus, Invalidate, PerformLayout
+		Eventos: Click, DoubleClick, ControlAdded, ControlRemoved, Paint
+	RadioButton
+		Propiedades: Text, Checked, GroupName, Appearance, AutoSize
+		Métodos: PerformClick, Focus, Show, Hide, Invalidate
+		Eventos: CheckStateChanged, Click, MouseDown, MouseUp, MouseMove
+	Tabcontrol
+		Propiedades: TabPages, SelectedIndex, SelectedTab, Alignment, Multiline
+		Métodos: SelectedTab(index), SelectedTab(tabPage), SuspendLayout, ResumeLayout, Invalidate
+		Eventos: SelectedIndexChanged, Selecting, Selected, MouseDown, MouseUp
+	TrackBar
+		Propiedades: Value, Minimum, Maximum, TrickFrequency, Orientation
+		Métodos: Focus, Selected, Invalidate, Update, Capture
+		Eventos: ValueChanged, Scroll, MouseDown, MouseUp, MouseMove
+	ProgressBar
+		Propiedades: Values, Minimum, Maximum, Step, Style
+		Métodos: PerformStep, Increment, Reset, Invalidate, Update
+		Eventos: Paint, MouseDown, MouseUp, MouseMove, BackColorChanged
+
+
+Parte 2
+16. ¿Cómo se declara un procedimiento? Ejemplo.
+	Un procedimiento en C# se declara con la siguiente estructura
+
+	ejemplo:
+	[modificador de acceso] void NombreDelMetodo([parámetros])
+	{
+		// Cuepor del método
+	}
+	
+	Modificador de acceso: Como public, private, protected, etc.
+	Tipo de retorno: Los procedimientos no retorna nada, son void.
+	NombreDelMetodo: El nombre que identifica al método.
+	Parámetros: Opcionales, entre paréntesis, para recibir datos.
+
+17. ¿Cómo se declara una función? Ejemplo
+	Una función en C# se declara de la siguiente manera:
+
+	ejemplo:
+	[modificador de acceso] [tipo de retorno] NombreDelMetodo([parámetros])
+	{
+		// Cuepor del método
+	}
+	
+	Modificador de acceso: Como public, private, protected, etc.
+	Tipo de retorno: Puede ser cualquier tipo como int, string, double, etc
+	NombreDelMetodo: El nombre que identifica al método.
+	Parámetros: Opcionales, entre paréntesis, para recibir datos.
+
+18. ¿Qué diferencia existe entre una función y un procedimiento?
+	La diferencia está en su propósito y en si retornan un valor o no.
+
+19. ¿Qué significa que el parámetro de un procedimiento se pasa por valor?
+	Significa que se crea una copia del valor del argumento original y es esta copia la que se utiliza dentro del procedimiento.
+
+20. ¿Qué significa que el parámetro de una función se pasa por referencia?
+	Significa que se pasa una referencia directa a la ubicación de memoria de la variable original y el parametro actua como un alias a la variables original.
+	Para indicar que un parametro se pasa por referencia en C#.net se utiliza la palabra reservada 'ref' en la declaración y llamada del método.
+
+Parte 3
+21. Enumere las estructuras de decisión. Ejemplifique cada una de ellas y explique en que se
+diferencian.
+	If: es la estructura de decisión más simple, ejecuta el bloque de código contenido si se cumple la condicón booleana.
+	
+	if(edad >= 18) Console.WriteLine("Es mayor de de edad.");
+
+	Else: es una estructura que acompaña al if para ser ejecutada si no se cumple la condicion booleana. No puede ir sola.
+	
+	if(temperatura > 21) Console.WriteLine("Hace calor.");
+	else Console.WriteLine("No hace calor.");
+
+	Switch: evalua una expresión contra una lista de posibles casos. Si encuentra una coincidencia ejecuta todos los bloques hasta encontrar el punto de corte(break). Tambien pueden incluir un caso por defecto(default) que se ejecutará si no hay conicidencia con ninguno de los casos.
+	
+	switch(diaSemana)
+	{
+		case "Lunes":
+		case "Martes":
+		case "Miercoles":
+		case "Jueves":
+		case "Viernes":
+			Console.WriteLine("Es día laborable");
+			break;
+		case "sabado":
+		case "domingo":
+			Console.WriteLine("Es fin de semana");
+			break;
+		default:
+			Console.WriteLine("El día no es reconocido");
+	}
+
+22. Enumere las estructuras de repetición. Ejemplifique cada una de ellas y explique en que se
+diferencian.
+
+	For: es un bucle de repetición que ejecuta un bloque de código siempre que la condición de terminacion no se cumpla, para ello se necesita conocer el numero de iteraciones. Ademas cuenta con una inicialización para un iterador y un incrementador de iterador.
+	for (int i = 0; i < 5; i++)
+	{
+		Console.WriteLine($"El valor de i es: {i}");
+	}
+	
+	Foreach: es un bucle de repetición para iterar sobre una colección de elementos. Se crea una variable local del tipo de la coleccion para ciclo de repetición.
+	foreach(string color in colores)
+	{
+		Console.WriteLine($"El color es: {color}");
+	}
+
+	While: es un bucle de iteración inexacto, ya que no requiere conocer la cantidad de iteraciones previamente. cuanta con una condicion de terminacion y un bloque de código.
+	while(condicion)
+	{
+		// cuerpo del bloque
+	}
+	
+	Do-While: similar al bucle while, pero agrega una bloque 'DO' que se ejecutara siempre la priemra vez, y luego evalua la condicion de corte.
+	do
+	{
+		//cuerpo del bloque
+	} while(condicion);
+
+23. ¿Cómo se crea una estructura en el entorno visto en clase?
+	Se agregan como un nuevo elemento en un archivo de clase, ya sea con la palabra 'class' o 'struct'
+
+24. ¿Qué es una propiedad?
+	Es un atributo del control que define su estado o apariencia. Ej: Text en la mayoria de controles.
+
+25. ¿Qué es un método?
+	Es una acción que el control puede realizar, se puede invocar para realizar una tarea. Ej: el clear en un TextBox.
+
+26. ¿Qué es un evento?
+	Es un notificación que el control emite cuando ocurre una acción o un cambio de estado relevante. Ej: el click de un Button.
+
+27. ¿Cuál es el uso ideal de una variable de tipo Boolean?
+	Representan valores de verdad(True o False) y el propósito es determinar el flujo de ejecución de un programa a través de estos estados binarios.
+
+28. ¿Para que se usa el método Parse cuando se lo utiliza por ejemplo como Decimal.Parse?
+	Se utiliza para convertir una cadena de texto que representa un número decimal a su equivalente numérico.
+
+29. ¿Cómo se declara un vector de 10 posiciones de tipo Decimal?
+	decimal[] miVectorDecimal = new decimal[10];
+
+30. ¿Cuándo hablamos de boxing y unboxing a que nos referimos?
+	Boxing es el proceso de conversión de tipos de valor (value types) y tipos de referencia (reference types) y Unboxing la vía opuesta.

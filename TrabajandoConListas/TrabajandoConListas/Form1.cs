@@ -1,18 +1,16 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿
 using System.Windows.Forms;
 
 namespace TrabajandoConListas
 {
     public partial class Form1 : Form
     {
-        BindingList<Paciente> listaPacientes;
+        ListaPacientes listaPacientes;
         public Form1()
         {
             InitializeComponent();
-            listaPacientes = new BindingList<Paciente>();
             listaPacientes = CargarDatos();
-            dataGridView1.DataSource = listaPacientes;
+            dataGridView1.DataSource = listaPacientes.GetAsList();
             CrearBotonEditar();
             CrearBotonEliminar();
 
@@ -40,13 +38,28 @@ namespace TrabajandoConListas
             dataGridView1.Columns.Add(btnEdit);
         }
 
-        private BindingList<Paciente> CargarDatos()
+        private ListaPacientes CargarDatos()
         {
-            BindingList<Paciente> listaInicial = new BindingList<Paciente>
+            Paciente pacienteUno = new Paciente { Codigo = "00A1", Nombre = "Jose", Apellido = "Lopez", Direccion = "Balcarse 50", Telefono = "011-123456" };
+            Paciente pacienteDos = new Paciente { Codigo = "00A2", Nombre = "Juan", Apellido = "Garay", Direccion = "Tucuman 151", Telefono = "011-123457" };
+            Paciente pacienteTres = new Paciente { Codigo = "00A3", Nombre = "Maria", Apellido = "Gonzales", Direccion = "Sarmiento 645", Telefono = "011-123457" };
+
+            ListaPacientes listaInicial = new ListaPacientes();
+            PacienteNodo primerPaciente = new PacienteNodo
             {
-                new Paciente { Codigo = "00A1", Nombre = "Jose", Apellido = "Lopez", Direccion = "Balcarse 50", Telefono = "011-123456" },
-                new Paciente { Codigo = "00A2", Nombre = "Juan", Apellido = "Lopez", Direccion = "Balcarse 50", Telefono = "011-123457" }
+                Dato = pacienteUno
             };
+            listaInicial.AgregarAlPrincipio(primerPaciente);
+            PacienteNodo segundoPaciente = new PacienteNodo
+            {
+                Dato = pacienteDos
+            };
+            listaInicial.AgregarAlFinal(segundoPaciente);
+            PacienteNodo tercerPaciente = new PacienteNodo
+            {
+                Dato = pacienteTres
+            };
+            listaInicial.AgregarAlFinal(tercerPaciente);
 
             return listaInicial;
         }
@@ -72,7 +85,9 @@ namespace TrabajandoConListas
                 btnAgregarEdicion.Visible = true;
                 btnCancelarEdicion.Visible = true;
 
-                Paciente pacienteSeleccionado = listaPacientes[e.RowIndex];
+                string codigoSeleccionado = dataGridView1.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
+                PacienteNodo pacienteNodoSeleccionado = listaPacientes.GetByCodigo(codigoSeleccionado);
+                Paciente pacienteSeleccionado = pacienteNodoSeleccionado.Dato;
                 txtCodigo.Text = pacienteSeleccionado.Codigo;
                 txtNombre.Text = pacienteSeleccionado.Nombre;
                 txtApellido.Text = pacienteSeleccionado.Apellido;
@@ -111,7 +126,12 @@ namespace TrabajandoConListas
                     Direccion = txtDireccion.Text,
                     Telefono = txtTelefono.Text
                 };
-                listaPacientes.Add(nuevoPaciente);
+                PacienteNodo nuevoPacienteNodo = new PacienteNodo
+                {
+                    Dato = nuevoPaciente
+                };
+                listaPacientes.AgregarAlFinal(nuevoPacienteNodo);
+                dataGridView1.DataSource = listaPacientes.GetAsList();
                 SwitchCreacion();
                 btnCreacion.Focus();
                 LimpiarTextBoxCreacion();
@@ -150,25 +170,19 @@ namespace TrabajandoConListas
         private void btnAgregarEdicion_Click(object sender, System.EventArgs e)
         {
             string codigoPaciente = txtCodigo.Text;
-            Paciente pacienteEditar = null;
+            Paciente pacienteEditar = new Paciente();
+            PacienteNodo pacienteNodoEditar = listaPacientes.GetByCodigo(codigoPaciente);
 
-            foreach (Paciente p in listaPacientes)
+            if (pacienteNodoEditar != null)
             {
-                if (p.Codigo == codigoPaciente)
-                {
-                    pacienteEditar = p;
-                    break;
-                }
-            }
-
-            if (pacienteEditar != null)
-            {
+                pacienteEditar.Codigo = txtCodigo.Text;
                 pacienteEditar.Nombre = txtNombre.Text;
                 pacienteEditar.Apellido = txtApellido.Text;
                 pacienteEditar.Direccion = txtDireccion.Text;
                 pacienteEditar.Telefono = txtTelefono.Text;
+                pacienteNodoEditar.Dato = pacienteEditar;
 
-                dataGridView1.Refresh();
+                dataGridView1.DataSource = listaPacientes.GetAsList();
                 LimpiarTextBoxCreacion();
                 btnAgregar.Visible = true;
                 btnAgregarEdicion.Visible = false;

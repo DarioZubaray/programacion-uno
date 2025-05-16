@@ -21,9 +21,9 @@ namespace TP6Colas
         private void MostrarCola()
         {
             listView1.Clear();
-            AgregarTodo(alta.Inicio);
-            AgregarTodo(media.Inicio);
-            AgregarTodo(baja.Inicio);
+            AgregarTodo(alta.Fin);
+            AgregarTodo(media.Fin);
+            AgregarTodo(baja.Fin);
         }
 
         private void AgregarTodo(MiNodo unNodo)
@@ -32,9 +32,9 @@ namespace TP6Colas
             {
                 listView1.Items.Add(unNodo.Nombre);
 
-                if(unNodo.Siguiente != null)
+                if(unNodo.Anterior != null)
                 {
-                    AgregarTodo(unNodo.Siguiente);
+                    AgregarTodo(unNodo.Anterior);
                 }
             }
         }
@@ -66,31 +66,17 @@ namespace TP6Colas
 
         private void btnAtender_Click(object sender, EventArgs e)
         {
-            MiNodo atendiendoAlta = alta.Desencolar();
-            if(atendiendoAlta == null)
+            MiNodo atendiendo = alta.Desencolar() ?? media.Desencolar() ?? baja.Desencolar();
+
+            if (atendiendo == null)
             {
-                MiNodo atendiendoMedia = media.Desencolar();
-                if(atendiendoMedia == null)
-                {
-                    MiNodo atendiendoBaja = baja.Desencolar();
-                    if(atendiendoBaja == null)
-                    {
-                        lblAtendiendo.Text = "";
-                        MessageBox.Show("No hay clientes que atender");
-                        return;
-                    }
-                    lblAtendiendo.Text = "Atendiendo a " + atendiendoBaja.Nombre;
-                    MostrarCola();
-                    return;
-                }
-                lblAtendiendo.Text = "Atendiendo a " + atendiendoMedia.Nombre;
-                MostrarCola();
+                lblAtendiendo.Text = "";
+                MessageBox.Show("No hay clientes que atender");
                 return;
             }
-            lblAtendiendo.Text = "Atendiendo a " + atendiendoAlta.Nombre;
 
+            lblAtendiendo.Text = $"Atendiendo a {atendiendo.Nombre}";
             MostrarCola();
-            return;
         }
     }
 }

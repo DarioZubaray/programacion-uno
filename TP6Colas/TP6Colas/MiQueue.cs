@@ -1,56 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace TP6Colas
 {
     class MiQueue
     {
-        public MiNodo Inicio;
+        public MiNodo Fin;
 
         public void Encolar(MiNodo unNodo)
         {
-            if(Inicio == null)
+            if(Fin == null)
             {
-                Inicio = unNodo;
+                Fin = unNodo;
             }
             else
             {
-                MiNodo aux = BuscarUltimo(Inicio);
-                aux.Siguiente = unNodo;
-            }
-        }
-
-        public MiNodo BuscarUltimo(MiNodo unNodo)
-        {
-            if (unNodo.Siguiente == null)
-            {
-                return unNodo;
-            }
-            else
-            {
-                return BuscarUltimo(unNodo.Siguiente);
+                MiNodo aux = Fin;
+                unNodo.Anterior = aux;
+                Fin = unNodo;
             }
         }
 
         public MiNodo Desencolar()
         {
-            if (Inicio == null)
+            if (Fin == null)
             {
                 return null;
             }
             else
             {
-                MiNodo aux = Inicio;
-                if(Inicio.Siguiente != null)
+                MiNodo aux = Fin;
+                if(Fin.Anterior!= null)
                 {
-                    Inicio = Inicio.Siguiente;
+                    Fin = Fin.Anterior;
                 }
                 else
                 {
-                    Inicio = null;
+                    Fin = null;
                 }
 
                 return aux;

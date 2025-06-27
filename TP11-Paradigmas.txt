@@ -1,0 +1,36 @@
+ENUNCIADO
+a) Realizar un trabajo comparativo que muestre los diferentes paradigmas de programación, con sus ventajas, desventajas.
+b) Realizar un trabajo de investigación sobre “Inteligencia artificial”, mostrando características principales y aspectos distintivos.
+
+a)
+Lógico:
+	Ventajas: Fácil de expresar relaciones complejas. Ideal para IA y sistemas expertos
+	Desventajas: Bajo rendimiento. Difícil de aplicar a tareas procedurales o de sistemas reales.
+	Ejemplo: Prolog
+
+Estructurado:
+	Ventajas: Código más claro y mantenible. Fácil depurar y probar.
+	Desventajas: Escalabilidad limitada. Difícil reutilización en sistemas grandes.
+	Ejemplo: C, Pascal
+
+Orientado a Objetos:
+	Ventajas: Alta reutilización de código. Facilita mantenimiento y ampliación.
+	Desventajas: Mayor complejidad inicial. Puede ser innecesario para programas pequeños.
+	Ejemplo: Java, C#, Python
+
+Orientado a Eventos:
+	Ventajas: Ideal para interfaces gráficas y apps interactivas. Flexible y reactivo.
+	Desventajas: Difícil de depurar. Flujo de control no lineal puede generar confusión.
+	Ejemplo: JavaScript en navegadores, C# con Windows Forms
+
+b)
+La inteligencia artificial (IA) es una rama de la informática que se enfoca en desarrollar sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, 
+como el reconocimiento de voz, la toma de decisiones, el aprendizaje automático y la resolución de problemas. 
+Una de sus características principales es la capacidad de aprender y mejorar a partir de datos, lo que se conoce como aprendizaje automático (machine learning).
+
+A diferencia de los programas tradicionales que siguen instrucciones rígidas, la IA busca adaptarse a nuevas situaciones y comportarse de forma autónoma en contextos variados. 
+Existen distintos enfoques dentro del campo, como la IA simbólica, que utiliza reglas y lógica formal, y la IA conexionista, basada en redes neuronales artificiales.
+
+En la actualidad, la IA se aplica en múltiples áreas, como la medicina, la industria, la educación y los servicios digitales. 
+Si bien ofrece grandes beneficios, también plantea desafíos éticos, como el uso responsable de los datos y el impacto en el empleo humano. 
+En conclusión, la inteligencia artificial representa uno de los desarrollos más transformadores de la tecnología contemporánea, con un potencial aún en expansión.
